@@ -24,8 +24,8 @@ class RegisterWindow(QWidget):
     def _setup_ui(self):
         """Initialize UI components"""
         main_layout = QVBoxLayout(self)
-        main_layout.setContentsMargins(15, 0, 15, 5)
-        main_layout.setSpacing(6)
+        main_layout.setContentsMargins(15, 10, 15, 10)
+        main_layout.setSpacing(10)
 
         # Title
         title = QLabel("Barangay Registration Form")
@@ -33,18 +33,25 @@ class RegisterWindow(QWidget):
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         main_layout.addWidget(title)
 
+        # Scroll Area for the form
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setStyleSheet("QScrollArea { border: none; background-color: white; }")
+
         # Form container
         form_container = QWidget()
-        main_layout.addWidget(form_container, 0)
-
         form_layout = QGridLayout()
         form_layout.setHorizontalSpacing(15)
         form_layout.setVerticalSpacing(6)
+        form_layout.setContentsMargins(0, 0, 0, 0)
         form_container.setLayout(form_layout)
         form_container.setStyleSheet(Styles.FORM_FIELD_STYLE)
 
         # Create all form sections
         self._create_form_fields(form_layout)
+
+        scroll.setWidget(form_container)
+        main_layout.addWidget(scroll)
 
     def _create_form_fields(self, form_layout):
         """Create all form input fields organized by section"""
@@ -260,7 +267,7 @@ class RegisterWindow(QWidget):
     def _add_section_header(self, title_text, layout, row):
         """Add a section header to the form"""
         label = QLabel(title_text)
-        label.setStyleSheet("font-size: 13px; font-weight: bold; color: #1565C0; margin: 4px 0;")
+        label.setStyleSheet("font-size: 13px; font-weight: bold; color: #1565C0; margin: 8px 0 4px 0;")
         layout.addWidget(label, row, 0, 1, 4)
         return row + 1
 
