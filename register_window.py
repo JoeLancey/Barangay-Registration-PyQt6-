@@ -24,7 +24,7 @@ class RegisterWindow(QWidget):
     def _setup_ui(self):
         """Initialize UI components"""
         main_layout = QVBoxLayout(self)
-        main_layout.setContentsMargins(15, 5, 15, 5)
+        main_layout.setContentsMargins(15, 0, 15, 5)
         main_layout.setSpacing(6)
 
         # Title
@@ -80,6 +80,61 @@ class RegisterWindow(QWidget):
         self.dob.setDisplayFormat("dd/MM/yyyy")
         self.dob.setDate(QDate.currentDate())
         self.dob.setMinimumHeight(28)
+        # Style the calendar popup for visibility
+        self.dob.setStyleSheet("""
+            QDateEdit {
+                padding: 8px;
+                border: 2px solid #999999;
+                border-radius: 6px;
+                font-size: 13px;
+                background-color: white;
+                color: black;
+            }
+            QDateEdit:focus {
+                border: 2px solid #1976D2;
+            }
+            QCalendarWidget {
+                background-color: white;
+                border: 2px solid #1976D2;
+            }
+            QCalendarWidget QWidget {
+                background-color: white;
+            }
+            QCalendarWidget QAbstractItemView:enabled {
+                color: black;
+                background-color: white;
+                selection-background-color: #E3F2FD;
+                selection-color: black;
+                border: 1px solid #1976D2;
+            }
+            QCalendarWidget QAbstractItemView:disabled {
+                color: #BDBDBD;
+            }
+            QCalendarWidget QToolButton {
+                color: black;
+                background-color: white;
+                border: 1px solid #E0E0E0;
+                border-radius: 4px;
+                padding: 5px;
+            }
+            QCalendarWidget QToolButton:hover {
+                background-color: #E3F2FD;
+                border: 1px solid #1976D2;
+            }
+            QCalendarWidget QMenu {
+                background-color: white;
+                color: black;
+            }
+            QCalendarWidget QSpinBox {
+                background-color: white;
+                color: black;
+                selection-background-color: #E3F2FD;
+                selection-color: black;
+            }
+            QCalendarWidget QWidget#qt_calendar_navigationbar {
+                background-color: white;
+            }
+        """)
         form_layout.addWidget(QLabel("Date of Birth: *"), row, 0)
         form_layout.addWidget(self.dob, row, 1)
 
