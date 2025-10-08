@@ -1,6 +1,7 @@
+
 """
 Centralized stylesheet definitions for the barangay registration system.
-Maintains consistent styling across all UI components.
+naa diri mga UI styles para ma reuse nako sya
 """
 
 
