@@ -1,3 +1,4 @@
+
 """
 
 mao ni sya ang entry point og mag initialize sa app sa main window
