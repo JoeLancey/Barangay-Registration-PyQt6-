@@ -1,6 +1,6 @@
 """
 Registration form window for new resident records.
-Provides comprehensive form for entering resident information.
+diri mag register ang mga tao
 """
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt, QDate, QRegularExpression
@@ -18,18 +18,18 @@ class RegisterWindow(QWidget):
         self.main_window = main_window
         self.setWindowTitle("Barangay Registration Form")
         self.showMaximized()
-        self.setStyleSheet("background-color: white; font-family: 'Segoe UI'; font-size: 12px;")
+        self.setStyleSheet("background-color: white; font-family: 'Segoe UI'; font-size: 18px;")
         self._setup_ui()
 
     def _setup_ui(self):
         """Initialize UI components"""
         main_layout = QVBoxLayout(self)
         main_layout.setContentsMargins(15, 10, 15, 10)
-        main_layout.setSpacing(10)
+        main_layout.setSpacing(0)
 
         # Title
         title = QLabel("Barangay Registration Form")
-        title.setStyleSheet("font-size: 20px; font-weight: bold; color: #0D47A1;")
+        title.setStyleSheet("font-size: 40px; font-weight: bold; color: #0D47A1;")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         main_layout.addWidget(title)
 
@@ -45,7 +45,47 @@ class RegisterWindow(QWidget):
         form_layout.setVerticalSpacing(6)
         form_layout.setContentsMargins(0, 0, 0, 0)
         form_container.setLayout(form_layout)
-        form_container.setStyleSheet(Styles.FORM_FIELD_STYLE)
+
+        # Enhanced form field style with explicit black text for all states
+        form_container.setStyleSheet(Styles.FORM_FIELD_STYLE + """
+            QLineEdit {
+                color: black !important;
+                background-color: white;
+            }
+            QLineEdit:focus {
+                color: black !important;
+            }
+            QSpinBox {
+                color: black !important;
+                background-color: white;
+            }
+            QSpinBox:focus {
+                color: black !important;
+            }
+            QComboBox {
+                color: black !important;
+                background-color: white;
+            }
+            QComboBox:focus {
+                color: black !important;
+            }
+            QComboBox:editable {
+                color: black !important;
+            }
+            QComboBox QAbstractItemView {
+                color: black !important;
+                background-color: white;
+                selection-background-color: #E3F2FD;
+                selection-color: black !important;
+            }
+            QTextEdit {
+                color: black !important;
+                background-color: white;
+            }
+            QTextEdit:focus {
+                color: black !important;
+            }
+        """)
 
         # Create all form sections
         self._create_form_fields(form_layout)
@@ -157,7 +197,7 @@ class RegisterWindow(QWidget):
         form_layout.addWidget(self.birthplace, row, 1)
 
         self.civil_status = QComboBox()
-        self.civil_status.addItems(["Select Civil Status","Single", "Married", "Widowed", "Separated", "Divorced"])
+        self.civil_status.addItems(["Select Civil Status", "Single", "Married", "Widowed", "Separated", "Divorced"])
         self.civil_status.setMinimumHeight(35)
         form_layout.addWidget(QLabel("Civil Status:"), row, 2)
         form_layout.addWidget(self.civil_status, row, 3)
