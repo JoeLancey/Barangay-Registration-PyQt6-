@@ -1,5 +1,6 @@
+
 """
-Dialog windows for the barangay registration system.
+diri ang admin log in og update window
 Contains login and record update dialogs.
 """
 from PyQt6.QtWidgets import *
