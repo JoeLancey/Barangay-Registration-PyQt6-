@@ -25,23 +25,25 @@ class StatisticsWindow(QWidget):
     def _setup_ui(self):
         """Initialize UI components"""
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(30, 30, 30, 30)
-        layout.setSpacing(20)
+        layout.setContentsMargins(30, 5, 30, 15)
+        layout.setSpacing(8)
 
         # Title
         title = QLabel("Population Statistics Dashboard")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         title.setStyleSheet("""
-            font-size: 24px;
+            font-size: 40px;
             font-weight: bold;
             color: #0D47A1;
-            margin-bottom: 20px;
+            margin: 0px;
+            padding: 0px;
         """)
         layout.addWidget(title)
 
         # Statistics cards row
         cards_layout = QHBoxLayout()
-        cards_layout.setSpacing(20)
+        cards_layout.setSpacing(10)
+        cards_layout.setContentsMargins(0, 0, 0, 0)
 
         # Total Population Card
         self.total_card = self._create_stat_card("Total Population", "0", "#1976D2")
@@ -57,9 +59,9 @@ class StatisticsWindow(QWidget):
 
         layout.addLayout(cards_layout)
 
-        # Charts container - FIXED HEIGHT
+        # Charts container - FLEXIBLE HEIGHT
         charts_container = QWidget()
-        charts_container.setFixedHeight(380)
+        charts_container.setMinimumHeight(600)
         charts_container.setStyleSheet("""
             QWidget {
                 background-color: white;
@@ -68,8 +70,8 @@ class StatisticsWindow(QWidget):
         """)
 
         charts_layout = QHBoxLayout(charts_container)
-        charts_layout.setContentsMargins(25, 25, 25, 25)
-        charts_layout.setSpacing(30)
+        charts_layout.setContentsMargins(20, 20, 20, 20)
+        charts_layout.setSpacing(25)
 
         # Pie chart section
         pie_section = QWidget()
@@ -87,7 +89,7 @@ class StatisticsWindow(QWidget):
         pie_layout.addWidget(pie_title)
 
         self.pie_chart = PieChartWidget()
-        self.pie_chart.setFixedHeight(300)
+        self.pie_chart.setMinimumHeight(500)
         pie_layout.addWidget(self.pie_chart)
 
         charts_layout.addWidget(pie_section)
@@ -108,7 +110,7 @@ class StatisticsWindow(QWidget):
         bar_layout.addWidget(bar_title)
 
         self.bar_chart = BarChartWidget()
-        self.bar_chart.setFixedHeight(300)
+        self.bar_chart.setMinimumHeight(500)
         bar_layout.addWidget(self.bar_chart)
 
         charts_layout.addWidget(bar_section)
@@ -131,7 +133,7 @@ class StatisticsWindow(QWidget):
     def _create_stat_card(self, title, value, color):
         """Create a statistics card widget"""
         card = QWidget()
-        card.setFixedHeight(110)
+        card.setFixedHeight(130)
         card.setStyleSheet(f"""
             QWidget {{
                 background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
@@ -141,13 +143,13 @@ class StatisticsWindow(QWidget):
         """)
 
         layout = QVBoxLayout(card)
-        layout.setContentsMargins(15, 12, 15, 12)
-        layout.setSpacing(5)
+        layout.setContentsMargins(15, 15, 15, 15)
+        layout.setSpacing(8)
 
         title_label = QLabel(title)
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         title_label.setStyleSheet("""
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.95);
             letter-spacing: 0.5px;
@@ -157,7 +159,7 @@ class StatisticsWindow(QWidget):
         value_label.setObjectName("value_label")
         value_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         value_label.setStyleSheet("""
-            font-size: 36px;
+            font-size: 42px;
             font-weight: bold;
             color: white;
         """)
@@ -344,7 +346,7 @@ class BarChartWidget(QWidget):
             painter.drawText(0, height // 2, width, 30, Qt.AlignmentFlag.AlignCenter, "No data available")
             return
 
-      # Chart dimensions
+        # Chart dimensions
         margin_left = 45
         margin_right = 25
         margin_top = 15
