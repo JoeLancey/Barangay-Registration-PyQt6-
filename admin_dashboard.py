@@ -1,6 +1,8 @@
+
 """
-Admin dashboard for viewing and managing resident records.
-Provides table view with search, update, and delete functionality.
+Admin dashboard maka view and manage records.
+
+naa diri table view naay search, update, and delete na function.
 """
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
@@ -52,6 +54,7 @@ class AdminDashboard(QWidget):
                 font-size: 13px;
                 background-color: white;
                 min-width: 300px;
+                color: black;  /* Set text color to black */
             }
             QLineEdit:focus {
                 border: 2px solid #1976D2;
