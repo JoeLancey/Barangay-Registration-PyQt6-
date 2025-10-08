@@ -1,3 +1,4 @@
+
 """
 Main window/landing page for the barangay registration system.
 Provides navigation to registration and admin sections.
