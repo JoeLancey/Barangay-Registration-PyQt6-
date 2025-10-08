@@ -1,6 +1,6 @@
 """
 Database management module for barangay registration system.
-Handles all database operations including CRUD operations.
+naa diri mahitabo ang crud dunction
 """
 import sqlite3
 
