@@ -79,6 +79,7 @@ styles.py                  # Centralized stylesheet definitions
 barangay_registration.db   # SQLite database (auto-generated)
 
 Database Schema
+
 The system uses a single residents table with the following structure:
 sqlCREATE TABLE residents (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
