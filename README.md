@@ -66,16 +66,17 @@ Language: Python
 
 
 Project Structure
-barangay-registration-system/
-├── main.py                    # Application entry point and initialization
-├── database_manager.py        # Database operations and CRUD functions
-├── main_window.py             # Main dashboard and navigation
-├── register_window.py         # Registration form interface
-├── admin_dashboard.py         # Administrative panel with table view
-├── statistics_window.py       # Data visualization components
-├── dialogs.py                 # Login and update dialogs
-├── styles.py                  # Centralized stylesheet definitions
-└── barangay_registration.db   # SQLite database (auto-generated)
+barangay-registration-system
+
+main.py                    # Application entry point and initialization
+database_manager.py        # Database operations and CRUD functions
+main_window.py             # Main dashboard and navigation
+register_window.py         # Registration form interface
+admin_dashboard.py         # Administrative panel with table view
+statistics_window.py       # Data visualization components
+dialogs.py                 # Login and update dialogs
+styles.py                  # Centralized stylesheet definitions
+barangay_registration.db   # SQLite database (auto-generated)
 
 Database Schema
 The system uses a single residents table with the following structure:
