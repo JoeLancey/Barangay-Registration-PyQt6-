@@ -34,7 +34,7 @@ Household relationship
 
 Emergency Contact
 
-Emergency contact person details
+Emergency contact person details	
 Relationship to resident
 Contact number
 
