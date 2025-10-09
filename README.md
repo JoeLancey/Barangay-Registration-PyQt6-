@@ -181,3 +181,21 @@ Administrative credentials stored in plaintext
 No audit trail for record modifications
 
 SCREENSHOTS OF SYSTEM RUNNING
+
+MAIN WINDOW
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/523fd687-23eb-4b78-9da0-2fefc7af2b1d" />
+
+REGISTER_WINDOW
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fd608a9f-1236-4853-be0d-c03f9518de1d" />
+
+ADMIN LOG IN DASHBOARD
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/75127819-7a20-45a6-ad4c-d5aa89b4b6e0" />
+
+ADMIN DASHBOARD
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/782a92d9-bb7b-44d9-887b-947a019f74a6" />
+
+ADMIN UPDATE DASHBOARD
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a49c799b-6bb1-445f-b1c9-4ca89b6a6ff5" />
+
+STATISTICS WINDOW
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/ccd81507-4e17-4ecc-b328-cd6ddacfdb7a" />
