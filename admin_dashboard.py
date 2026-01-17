@@ -1,8 +1,7 @@
 
 """
 Admin dashboard maka view and manage records.
-
-naa diri table view naay search, update, and delete na function.
+hahahhahaha
 """
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
