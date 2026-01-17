@@ -1,7 +1,6 @@
 
 """
 Admin dashboard maka view and manage records.
-hahahhahaha
 """
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
